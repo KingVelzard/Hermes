@@ -34,7 +34,7 @@ sudo apt install libssl-dev inotify-tools
 
 ---
 
-## Server Setup (WSL on home machine)
+## Server Setup (On Linux or WSL on home machine)
 
 ### 1. Clone and compile
 
