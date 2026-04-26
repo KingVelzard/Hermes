@@ -1,0 +1,13 @@
+#!/bin/bash
+source ~/.hermes.env # client env file 
+SERVER_IP="PUTIPOFOTHERCOMPUTERHERE"
+CLIENT="$HOME/.local/bin/client"
+
+if [ $# -eq 0 ]; then
+    echo "Usage: hermes <file1> [file2 ...]"
+    exit 1
+fi
+
+read -sp "Password: " PASSWORD
+echo
+$CLIENT $SERVER_IP "$PASSWORD" "$HERMES_AES_KEY" "$HERMES_AES_IV" "$@"

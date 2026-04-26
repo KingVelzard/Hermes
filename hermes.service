@@ -1,0 +1,14 @@
+[Unit]
+Description=Hermes server
+After=network.target
+
+[Service]
+EnvironmentFile=.config/systemd/user/hermes.env #put env file containing HERMES_AES_KEY and HERMES_AES_IV here 
+ExecStartPre=/usr/bin/touch Sent_Files/.startup #touch destination folder
+ExecStart=yourPath/Hermes/server # path to compiled server 
+WorkingDirectory=/Sent_Files #destination folder for files 
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target
